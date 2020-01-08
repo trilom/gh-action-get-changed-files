@@ -1,6 +1,16 @@
 name:        'Get Changed Files'
 description: 'Saves lists of changed files as JSON for use by other actions.'
 author:      'Dustin Falgout <dustin@falgout.us>'
+inputs:
+  repo-token:
+    description: 'The GITHUB_TOKEN secret if necessary'
+outputs:
+  files_created:
+    description: 'The names of the newly created files'
+  files_updated:
+    description: 'The names of the updated files'
+  files_deleted:
+    description: 'The names of the deleted files'
 runs:
   using: 'node12'
   main:  'main.js'
