@@ -8,7 +8,10 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "eslint --fix main.ts"
+    "lint": "eslint --fix main.ts",
+    "clean": "rm -rf node_modules",
+    "local": "yarn install && yarn lint && yarn build && yarn clean",
+    "deploy": "yarn clean && yarn install --prod && yarn build && yarn clean"
   },
   "devDependencies": {
     "@types/node": "12.12.17",
